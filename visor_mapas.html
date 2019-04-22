@@ -62,7 +62,7 @@
             attribution: "Cedido por © Instituto Geográfico Nacional de España"
             });
 
-         var base = L.tileLayer.wms("http://www.ign.es/wms-inspire/mapa-raster", {
+        var base = L.tileLayer.wms("http://www.ign.es/wms-inspire/mapa-raster", {
             layers: "mtn_rasterizado",//layer queryable name
             format: 'image/jpeg',
             transparent: false,
@@ -77,17 +77,17 @@
 		    })
 		    .setView([41.8100593, -0.98734], 11); //las coordenadas donde se inicia el visor y el zoom por defecto
 
-		var baseLayers = {
-			"MAPA OSM": osmMap,
-            "Carto. IGN": base,
-            "Ortofoto": pnoa
-		};
+	var baseLayers = {
+		"MAPA OSM": osmMap,
+        	"Carto. IGN": base,
+        	"Ortofoto": pnoa
+	};
 
-		var overlays = {
-			"UXO localizados": artefactos  //capa de informacion geografica
-		};
+	var overlays = {
+		"UXO localizados": artefactos  //capa de informacion geografica
+	};
 
-		L.control.layers(baseLayers,overlays).addTo(map);
+	L.control.layers(baseLayers,overlays).addTo(map);
 
         // anyadimos control de escala
         L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,updateWhenIdle: false}}).addTo(map);
